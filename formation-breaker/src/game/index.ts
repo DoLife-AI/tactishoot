@@ -1,0 +1,5 @@
+export { config } from './config'
+export { default as BootScene } from './BootScene'
+export { default as LoadingScene } from './LoadingScene'
+export { default as MenuScene } from './MenuScene'
+export { default as PlayScene } from './PlayScene'
