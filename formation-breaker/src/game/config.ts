@@ -8,8 +8,8 @@ import PlayScene from './PlayScene'
 export const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   parent: 'game',
-  width: 836,
-  height: 470,
+  width: 1120,
+  height: 630,
   backgroundColor: '#1a1a2e',
   scale: {
     mode: Phaser.Scale.FIT,

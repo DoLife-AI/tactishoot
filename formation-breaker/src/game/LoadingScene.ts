@@ -1,6 +1,20 @@
 import Phaser from 'phaser'
 
-const PLAYER_ASSET_PATH = '/assets/kenney/top-down-shooter/PNG/Soldier%201/soldier1_stand.png'
+const K = '/assets/kenney/top-down-shooter/PNG'
+
+const ASSETS = {
+  player: `${K}/Soldier%201/soldier1_stand.png`,
+  enemy: `${K}/Hitman%201/hitman1_stand.png`,
+  enemy2: `${K}/Survivor%201/survivor1_stand.png`,
+  enemy3: `${K}/Robot%201/robot1_stand.png`,
+  enemy4: `${K}/Zombie%201/zoimbie1_stand.png`,
+  enemy5: `${K}/Woman%20Green/womanGreen_stand.png`,
+  enemy6: `${K}/Man%20Blue/manBlue_stand.png`,
+  friendly: `${K}/Survivor%201/survivor1_stand.png`,
+  soundShoot: '/assets/kenney/interface-sounds/Audio/click_001.ogg',
+  soundHit: '/assets/kenney/interface-sounds/Audio/confirmation_001.ogg',
+  soundKill: '/assets/kenney/interface-sounds/Audio/error_001.ogg',
+}
 
 export default class LoadingScene extends Phaser.Scene {
   private progressText!: Phaser.GameObjects.Text
@@ -27,7 +41,17 @@ export default class LoadingScene extends Phaser.Scene {
       this.progressText.setText(`${Math.round(value * 100)}%`)
     })
 
-    this.load.image('player', PLAYER_ASSET_PATH)
+    this.load.image('player', ASSETS.player)
+    this.load.image('enemy', ASSETS.enemy)
+    this.load.image('enemy2', ASSETS.enemy2)
+    this.load.image('enemy3', ASSETS.enemy3)
+    this.load.image('enemy4', ASSETS.enemy4)
+    this.load.image('enemy5', ASSETS.enemy5)
+    this.load.image('enemy6', ASSETS.enemy6)
+    this.load.image('friendly', ASSETS.friendly)
+    this.load.audio('shoot', ASSETS.soundShoot)
+    this.load.audio('hit', ASSETS.soundHit)
+    this.load.audio('kill', ASSETS.soundKill)
 
     this.load.once('complete', () => {
       this.scene.start('MenuScene')
