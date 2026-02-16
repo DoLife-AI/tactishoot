@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 
-const K = '/assets/kenney/top-down-shooter/PNG'
+const B = (import.meta.env.BASE_URL || '/').replace(/\/*$/, '/')
+const K = `${B}assets/kenney/top-down-shooter/PNG`
 
 const ASSETS = {
   player: `${K}/Soldier%201/soldier1_stand.png`,
@@ -10,10 +11,15 @@ const ASSETS = {
   enemy4: `${K}/Zombie%201/zoimbie1_stand.png`,
   enemy5: `${K}/Woman%20Green/womanGreen_stand.png`,
   enemy6: `${K}/Man%20Blue/manBlue_stand.png`,
+  tileFloor: `${K}/Tiles/tile_137.png`,
+  tileFloor2: `${K}/Tiles/tile_123.png`,
+  tileFloor3: `${K}/Tiles/tile_255.png`,
+  tileFloor4: `${K}/Tiles/tile_08.png`,
+  tileFloor5: `${K}/Tiles/tile_20.png`,
   friendly: `${K}/Survivor%201/survivor1_stand.png`,
-  soundShoot: '/assets/kenney/interface-sounds/Audio/click_001.ogg',
-  soundHit: '/assets/kenney/interface-sounds/Audio/confirmation_001.ogg',
-  soundKill: '/assets/kenney/interface-sounds/Audio/error_001.ogg',
+  soundShoot: `${B}assets/kenney/interface-sounds/Audio/click_001.ogg`,
+  soundHit: `${B}assets/kenney/interface-sounds/Audio/confirmation_001.ogg`,
+  soundKill: `${B}assets/kenney/interface-sounds/Audio/error_001.ogg`,
 }
 
 export default class LoadingScene extends Phaser.Scene {
@@ -48,6 +54,11 @@ export default class LoadingScene extends Phaser.Scene {
     this.load.image('enemy4', ASSETS.enemy4)
     this.load.image('enemy5', ASSETS.enemy5)
     this.load.image('enemy6', ASSETS.enemy6)
+    this.load.image('tileFloor', ASSETS.tileFloor)
+    this.load.image('tileFloor2', ASSETS.tileFloor2)
+    this.load.image('tileFloor3', ASSETS.tileFloor3)
+    this.load.image('tileFloor4', ASSETS.tileFloor4)
+    this.load.image('tileFloor5', ASSETS.tileFloor5)
     this.load.image('friendly', ASSETS.friendly)
     this.load.audio('shoot', ASSETS.soundShoot)
     this.load.audio('hit', ASSETS.soundHit)
