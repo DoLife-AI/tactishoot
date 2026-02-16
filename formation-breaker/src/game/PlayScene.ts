@@ -244,8 +244,6 @@ export default class PlayScene extends Phaser.Scene {
   private buildScrollingMap(width: number, height: number) {
     const mapW = MAP_SECTIONS_WIDE * width
     const mapH = MAP_SECTIONS_TALL * height
-    const centerX = mapW / 2
-    const centerY = mapH / 2
 
     // Grass base (exterior)
     const grass = this.add.graphics()
